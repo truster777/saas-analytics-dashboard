@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Customer {
+  id           String   @id @default(cuid())
+  companyName  String
+  email        String   @unique
+  createdAt    DateTime @default(now())
+
+  subscriptions Subscription[]
+}
+
+model Subscription {
+  id           String   @id @default(cuid())
+  customerId   String
+  customer     Customer @relation(fields: [customerId], references: [id])
+
+  plan         String
+  mrr          Float
+  status       String
+
+  startedAt    DateTime @default(now())
+  canceledAt   DateTime?
+
+  payments     Payment[]
+}
+
+model Payment {
+  id             String   @id @default(cuid())
+  subscriptionId String
+  subscription   Subscription @relation(fields: [subscriptionId], references: [id])
+
+  amount         Float
+  paidAt         DateTime @default(now())
+}

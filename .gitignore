@@ -45,3 +45,9 @@ next-env.d.ts
 # database
 /prisma/dev.db
 /prisma/dev.db-journal
+
+# agent tooling (local only, not part of the project)
+/.agents
+/.claude
+/.windsurf
+skills-lock.json

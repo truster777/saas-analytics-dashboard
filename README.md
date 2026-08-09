@@ -8,12 +8,12 @@ A B2B SaaS analytics dashboard for tracking subscription revenue, churn, and cus
 
 ## Features
 
-- **Revenue metrics** — MRR, active subscriptions, churn rate, and estimated LTV, computed server-side from raw payment records
-- **Customer directory** — searchable table of all accounts with plan, status, and revenue at a glance
-- **Customer detail view** — full payment history per account
-- **Dark mode** — system-aware theme switching
-- **Responsive** — usable from a phone to a widescreen monitor
-- **Loading states** — skeleton screens for every route while data streams in
+- **Revenue metrics** - MRR, active subscriptions, churn rate, and estimated LTV, computed server-side from raw payment records
+- **Customer directory** - searchable table of all accounts with plan, status, and revenue at a glance
+- **Customer detail view** - full payment history per account
+- **Dark mode** - system-aware theme switching
+- **Responsive** - usable from a phone to a widescreen monitor
+- **Loading states** - skeleton screens for every route while data streams in
 
 ## Stack
 
@@ -38,8 +38,8 @@ Open [http://localhost:3000](http://localhost:3000).
 
 Three tables capture the shape of a subscription business:
 
-- `Customer` — an account
-- `Subscription` — a customer's plan, MRR, and status (active / canceled)
-- `Payment` — individual billing events, the source of truth for revenue-over-time charts
+- `Customer` - an account
+- `Subscription` - a customer's plan, MRR, and status (active / canceled)
+- `Payment` - individual billing events, the source of truth for revenue-over-time charts
 
 Metrics on the dashboard aren't stored — they're derived on every request directly from `Subscription` and `Payment` rows, which keeps the numbers always consistent with the underlying data.

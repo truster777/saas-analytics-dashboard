@@ -19,7 +19,7 @@ A B2B SaaS analytics dashboard for tracking subscription revenue, churn, and cus
 
 - **Framework**: Next.js 15 (App Router, Server Components)
 - **Language**: TypeScript
-- **Database**: SQLite + Prisma ORM
+- **Database**: PostgreSQL + Prisma ORM
 - **UI**: Tailwind CSS, shadcn/ui
 - **Charts**: Recharts
 
@@ -27,6 +27,11 @@ A B2B SaaS analytics dashboard for tracking subscription revenue, churn, and cus
 
 ```bash
 npm install
+```
+
+Create a `.env` file with a `DATABASE_URL` pointing at a Postgres instance (a free one from [Neon](https://neon.tech) or [Prisma Postgres](https://www.prisma.io/postgres) works fine), then:
+
+```bash
 npx prisma migrate dev
 npx prisma db seed
 npm run dev
